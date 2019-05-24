@@ -35,7 +35,7 @@ specific google object options can be found on [Google Develop](https://develope
 |:-|:-:|:-:|:-|
 |API_KEY| - |`String`| google map js api key |
 |map_options|`{ zoom: 4,center: { lat: 30.1959666, lng: 120.2137009 }}`|`GoogleMapOptions`| pass google map init options|
-|node_name|-|`HTMLElement|String`| google map mount node or dom id string|
+|node_name|-|`HTMLElement\String`| google map mount node or dom id string|
 |polygon|-|[`Polygon`](#Polygon)| polygon option|
 |routine|-|[`Routine`](#Routine)| routine option|
 |on_load|-|`(err:String)=>void`|func runs after script loaded, `err` would be null if success|
