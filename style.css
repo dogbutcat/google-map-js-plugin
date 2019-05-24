@@ -1,0 +1,290 @@
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+
+/* Optional: Makes the sample page fill the window. */
+
+html,
+body {
+	position: relative;
+	/*height: 100%;*/
+	margin: 0;
+	padding: 0;
+	font-family: Monospaced Number,Chinese Quote,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.btn{
+	/*border: none;*/
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 5px;
+	font-size: 16px;
+	color: white;
+	background-color: #1890ff; /* Green */
+}
+
+.btn .btn_primary{
+	padding: 1em 2em;
+	width: 100%;
+	background-color: transparent;
+	color: #ffffff;
+	border: 1px solid #000;
+	font-size: 16px;
+}
+
+.btn_cancel {
+	color: rgba(0, 0, 0, .4);
+	background-color: #ffffff;
+	border: 1px solid #d9d9d9;
+}
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 100%; /* Full width */
+	/*height: 100%; !* Full height *!*/
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgba(106, 106, 106, 0.6);
+}
+
+/* Modal Content/Box */
+.modal-content {
+	position: absolute;
+	padding: 10px 20px 10px 20px;
+	top: 50%;
+	left: 50%;
+	width: 90%; /* Could be more or less, depending on screen size */
+	height: 90%;
+	background-color: #fefefe;
+	border: 1px solid #888;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.modal-content_body {
+	display: table;
+	margin-right: 20px;
+	width: 100%;
+	height: 100%;
+}
+
+.modal-content_map{
+	width: 100%;
+	height: 85%;
+	/*margin-bottom: 5px;*/
+	display: table-row;
+	/*background-color: cyan;*/
+}
+
+#map{
+	width: 100%;
+	height: 100%;
+}
+
+.loading{
+	height: 100%;
+	width: 100%;
+	background: #e6e6e6;
+}
+
+.loading span{
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	font-size: 30px;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.modal-content_control {
+	display: table-row;
+	/*height: 8%;*/
+	/*margin-bottom: 5px;*/
+}
+
+.modal-content_control__content{
+	height: 100%;
+	display: inline-block;
+	vertical-align: top;
+	padding-top: 10px;
+}
+
+.modal-content_footer{
+	display: table-row;
+}
+
+.modal-content_footer__operation{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: right;
+}
+
+/* The Close Button */
+.close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #000;
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.geo-label {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.input{
+	height: 30px;
+	width: 200px;
+	font-size: 15px;
+	color: rgba(0,0,0,.65);
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #d9d9d9;
+}
+
+
+/*region menu*/
+.menu {
+	*zoom: 1;
+}
+.menu:before, .menu:after {
+	content: '';
+	display: table;
+}
+.menu:after {
+	clear: both;
+	overflow: hidden;
+}
+
+.menu, .drop-item {
+	margin: 0;
+	padding: 0;
+	list-style: none outside none;
+}
+
+.menu span {
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	/*font-family: Arial, Helventica;*/
+	font-size: 14px;
+}
+
+.menu {
+	display: inline-block;
+	height: 100%;
+	width: 200px;
+	z-index: 99;
+}
+
+.menu > li {
+	background-color: #1890ff;
+	float: left;
+	position: relative;
+	-webkit-backface-visibility: hidden;
+}
+
+.menu span {
+	display: block;
+}
+
+.menu li:hover {
+	background-color: #e74c3e;
+}
+
+.menu > li > span {
+	padding: 1em 2em;
+	-webkit-backface-visibility: hidden;
+}
+
+.drop-item {
+	z-index: 999;
+	position: absolute;
+	width: 154px;
+	left: 50%;
+	margin-left: -92.4px;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-webkit-property: left top;
+	-moz-property: left top;
+	-o-property: left top;
+	-ms-property: left top;
+	transform-origin: left top;
+}
+.drop-item li {
+	background-color: #0d6cb4;
+	position: relative;
+	overflow: hidden;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-property: all 0.2s ease;
+	-moz-property: all 0.2s ease;
+	-o-property: all 0.2s ease;
+	-ms-property: all 0.2s ease;
+	transition: all 0.2s ease;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.drop-item li button {
+	padding: 1em 2em;
+	width: 100%;
+	background-color: transparent;
+	color: #ffffff;
+	border: 1px solid #000;
+	font-size: 16px;
+}
+.drop-item li::after {
+	content: '';
+	position: absolute;
+	top: -125%;
+	width: 100%;
+	height: 100%;
+	-webkit-property: 0 0 50px 10px rgba(0, 0, 0, 0.9);
+}
+
+.menu > li:hover .drop-item, .menu > li:hover .drop-item li {
+	opacity: 1;
+	visibility: visible;
+}
+/*endregion*/
+
+.delete-menu {
+	position: absolute;
+	width: 24px;
+	background: white;
+	padding: 3px;
+	color: #666;
+	font-weight: bold;
+	border: 1px solid #999;
+	font-family: sans-serif;
+	font-size: 12px;
+	box-shadow: 1px 3px 3px rgba(0, 0, 0, .3);
+	margin-top: -10px;
+	margin-left: 10px;
+	cursor: pointer;
+  }
+  .delete-menu:hover {
+	background: #eee;
+  }

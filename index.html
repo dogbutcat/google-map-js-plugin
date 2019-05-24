@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+    <script src="./lib/index.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- Trigger/Open The Modal -->
+<button class="btn" id="modalBtn">Open Modal</button>
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <!--<span class="close">&times;</span>-->
+        <div class="modal-content_body">
+            <div class="modal-content_control">
+                <!--<ul class="menu">-->
+                    <!--<li>-->
+                        <!--<span>菜单</span>-->
+                        <!--<ul class="drop-item">-->
+                            <!--<li class="menu_item"><button id="drawBtn">画图</button></li>-->
+                            <!--<li class="menu_item"><button id="cleanBtn">清除</button></li>-->
+                            <!--<li class="menu_item"><button id="stopBtn">停止画图</button></li>-->
+                            <!--<li class="menu_item"><button id="getGeoBtn">获得图形Geo</button></li>-->
+                            <!--<li class="menu_item"><button id="checkBtn">检查点</button></li>-->
+                            <!--<li class="menu_item"><button id="undoBtn">撤销</button></li>-->
+                            <!--<li class="menu_item"><button id="removeBtn">删除标记点</button></li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <!--<div class="modal-content_control__content">-->
+                    <!--<label for="lng" class="geo-label">经度:</label><input type="text" name="longitude" id="lng" placeholder="经度" class="input">-->
+                    <!--<label for="lat" class="geo-label">纬度:</label><input type="text" name="latitude" id="lat" placeholder="纬度" class="input">-->
+                <!--</div>-->
+                <button class="btn btn_primary" id="drawBtn">画图</button>
+                <button class="btn btn_primary" id="cleanBtn">清除</button>
+                <button class="btn btn_primary" id="stopBtn">停止画图</button>
+                <button class="btn btn_primary" id="getGeoBtn">获得画图的Geo</button>
+                <button class="btn btn_primary" id="getPolygonCenters">所画图形的中心点</button>
+                <button class="btn btn_primary" id="getPolygon">获得外部传入的Geo</button>
+                <button class="btn btn_primary" id="cleanPolygon">清除外部传入的Geo</button>
+                <button class="btn btn_primary" id="undoBtn">撤销上次画图</button>
+            </div>
+            <div class="modal-content_map">
+                <div id="map"><div class="loading"><span>Loading...</span></div></div>
+            </div>
+            <div class="modal-content_footer">
+                    <div class="modal-content_footer__operation">
+                        <button class="btn btn_cancel" id="cancelBtn">取消</button>
+                        <button class="btn btn_confirm" id="confirmBtn">确定</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Replace the value of the key parameter with your own API key. -->
+<!--<script async defer-->
+<!--src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe_6-_jogXRe0e7RK67ukVI9ZpqKy01MI">-->
+<!--</script>-->
+<script src="./index.js"></script>
+</body>
+</html>
