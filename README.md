@@ -10,7 +10,7 @@ edit or display or customization style
 
 ## API
 
-specific google object options can be found on [Google Develop](https://developers.google.com/maps/documentation/javascript/reference/3.35/)
+specific google object options can be found on [Google Develop](https://developers.google.com/maps/documentation/javascript/reference/)
 
 |props|default|type|descriptioin|
 |:-|:-:|:-:|:-|
